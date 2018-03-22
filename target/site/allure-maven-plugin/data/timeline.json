@@ -1,0 +1,64 @@
+{
+  "hosts" : [ {
+    "title" : "Jennifers-MacBook-Pro.local",
+    "threads" : [ {
+      "title" : "9629@Jennifers-MacBook-Pro.local.main(1)",
+      "testCases" : [ {
+        "uid" : "536269d5b8c3d81e",
+        "name" : "Given I am on home page",
+        "title" : "Given I am on home page",
+        "time" : {
+          "start" : 1518275138584,
+          "stop" : 1518275138588,
+          "duration" : 4
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "71958b78c77b6443",
+        "name" : "When I enter mohammad@technosoftacademy.io into username text fields on home screen",
+        "title" : "When I enter mohammad@technosoftacademy.io into username text fields on home screen",
+        "time" : {
+          "start" : 1518275139092,
+          "stop" : 1518275139092,
+          "duration" : 0
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "61d6046ddb6630a4",
+        "name" : "And I enter test1234 into password text fields on home screen",
+        "title" : "And I enter test1234 into password text fields on home screen",
+        "time" : {
+          "start" : 1518275139182,
+          "stop" : 1518275139182,
+          "duration" : 0
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "7426a8564c362977",
+        "name" : "And I click on login button on home screen",
+        "title" : "And I click on login button on home screen",
+        "time" : {
+          "start" : 1518275140115,
+          "stop" : 1518275140116,
+          "duration" : 1
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "4fceb71a714de2ce",
+        "name" : "Then I verify that i am an invalid login page",
+        "title" : "Then I verify that i am an invalid login page",
+        "time" : {
+          "start" : 1518275140158,
+          "stop" : 1518275140158,
+          "duration" : 0
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      } ]
+    } ]
+  } ]
+}

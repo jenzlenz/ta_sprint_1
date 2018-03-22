@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1518275138407" stop="1518275140279" version="1.4.15" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Verify Invalid Login</name>
+    <title>Verify Invalid Login</title>
+    <test-cases>
+        <test-case start="1518275138584" stop="1518275138588" status="passed">
+            <name>Given I am on home page</name>
+            <title>Given I am on home page</title>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="Jennifers-MacBook-Pro.local"/>
+                <label name="thread" value="9629@Jennifers-MacBook-Pro.local.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1518275139092" stop="1518275139092" status="passed">
+            <name>When I enter mohammad@technosoftacademy.io into username text fields on home screen</name>
+            <title>When I enter mohammad@technosoftacademy.io into username text fields on home screen</title>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="Jennifers-MacBook-Pro.local"/>
+                <label name="thread" value="9629@Jennifers-MacBook-Pro.local.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1518275139182" stop="1518275139182" status="passed">
+            <name>And I enter test1234 into password text fields on home screen</name>
+            <title>And I enter test1234 into password text fields on home screen</title>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="Jennifers-MacBook-Pro.local"/>
+                <label name="thread" value="9629@Jennifers-MacBook-Pro.local.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1518275140115" stop="1518275140116" status="passed">
+            <name>And I click on login button on home screen</name>
+            <title>And I click on login button on home screen</title>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="Jennifers-MacBook-Pro.local"/>
+                <label name="thread" value="9629@Jennifers-MacBook-Pro.local.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1518275140158" stop="1518275140158" status="passed">
+            <name>Then I verify that i am an invalid login page</name>
+            <title>Then I verify that i am an invalid login page</title>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="Jennifers-MacBook-Pro.local"/>
+                <label name="thread" value="9629@Jennifers-MacBook-Pro.local.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="story" value="Verify Invalid Login"/>
+        <label name="feature" value="Login feature"/>
+        <label name="framework" value="CucumberJVM"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>
