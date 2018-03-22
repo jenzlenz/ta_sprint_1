@@ -22,8 +22,8 @@ public class HotelsHomePage extends BasePage{
     private By destinationTextField = By.id("qf-0q-destination");
     private By destinationguesses = By.className("autosuggest-category-result");
     private By checkInDateTextBox = By.xpath(".//*[@id=\"qf-0q-localised-check-in\"]");
-    private By checkInDatePicker = By.xpath(".//[class='widget-datepicker-bd']/descendant::a");
-    private By checkOutDatePicker = By.xpath(".//[class='widget-datepicker-bd']/descendant::a");
+    private By checkInDatePicker = By.xpath(".//*[@class=\"widget-datepicker-bd\"]/descendant::a/");
+    private By checkOutDatePicker = By.xpath(".//*[@class=\"widget-datepicker-bd\"]/descendant::a/");
     private By checkOutDateTextBox = By.xpath(".//*[@id=\"qf-0q-localised-check-out\"]");
     private By numRoomsDropdown = By.id("qf-0q-rooms");
     private By roomsDropdown = By.id("qf-0q-compact-occupancy");

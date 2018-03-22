@@ -19,7 +19,9 @@ public class BasePage {
 
 	public void clickOn(By locator) {
 		try {
+			System.out.println("Inside clickOn method in BasePage");
 			SharedSD.getDriver().findElement(locator).click();
+			System.out.println("Leaving clickOn method in BasePage");
 		} catch (NoSuchElementException e) {
 			Assert.fail("Element is not found with this locator: " + locator.toString());
 			e.printStackTrace();
@@ -203,19 +205,26 @@ public class BasePage {
 
 	public void selectValueFromCalendar(By locator, String dateToSelect) throws Exception {
 		Thread.sleep(3000);
-
+		System.out.println("Inside selectValueFromCalendar method");
 		SharedSD.getDriver().findElement(locator);
 		List<WebElement> days = SharedSD.getDriver().findElements(locator);
-
+		System.out.println("Just got the list of dates on the calendar");
 		Thread.sleep(3000);
 
 		for (WebElement day : days) {
+			System.out.println("Looping through dates until one equals tomorrows date");
+
 			String calendarDay = day.getText();
+			System.out.println("calendar day is: " + calendarDay);
+			System.out.println("dateToSelect is: " + dateToSelect);
 			if (calendarDay.equals(dateToSelect)) {
+				System.out.println("I found the date I need to select");
 				day.click();
+				System.out.println("I just clicked on the date");
 				Thread.sleep(3000);
 				break;
 			}
+			System.out.println("I didn't find the date to seelct YET.....");
 		}
 	}
 

@@ -6,8 +6,8 @@ Feature: Verification of Hotels homepage data
 
 #  # JIRA ticket TA4:
   Scenario: Verify user is able to successfully search for hotels
-    When I enter Milwaukee in destination and select Milwaukee, Milwuakee County, United States of America on hotels.com home screen
-#    And I select check in for tomorrows date
+#    When I enter Milwaukee in destination and select Milwaukee, Milwuakee County, United States of America on hotels.com home screen
+    When I select check in for tomorrows date
 #    And I select check out date 6 days later
 #    Then I verify the number of nights is 6
 #    And I select Rooms
