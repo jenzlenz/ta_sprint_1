@@ -17,4 +17,4 @@ Feature: Verification of Hotels homepage data
     And I select age 2 for child 1
     And I select age 1 for child 2
     And I click on Search to get hotel results
-#    Then I verify search results page displays correct options chosen
+    Then I verify search results page displays correct options chosen

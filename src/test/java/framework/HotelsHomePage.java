@@ -35,7 +35,8 @@ public class HotelsHomePage extends BasePage{
     private By closeAlertButton = By.xpath(".//*[@id=\"managed-overlay\"]/button");
     private By numNights = By.className("widget-query-num-nights");
     private By editOrAddRooms = By.linkText("Edit or add Rooms");
-    private By searchResultSummary = By.className("summary");
+    private By searchResultSummary = By.xpath("//*[@id=\"search\"]/div[1]/div/h1");
+    private By searchResultDatesOccupancy = By.className("dates-occupancy");
 
 //Methods
     public void clickOnSearchButton() {
@@ -108,7 +109,10 @@ public class HotelsHomePage extends BasePage{
     }
 
     public String getSearchResultHeading() {
-        String searchResultHeading = SharedSD. getDriver().findElement(searchResultSummary).getText() ;
+
+        String searchResultLocation = SharedSD. getDriver().findElement(searchResultSummary).getText() ;
+        String datesOccupancy = SharedSD. getDriver().findElement(searchResultDatesOccupancy).getText() ;
+        String searchResultHeading = searchResultLocation + " " + datesOccupancy;
         return searchResultHeading;
     }
 

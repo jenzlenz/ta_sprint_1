@@ -78,10 +78,11 @@ public class HotelsSD {
     }
 
     @Then("^I verify search results page displays correct options chosen$")
-    public void verifySearchResuktHeaderInfo() {
+    public void verifySearchResultHeaderInfo() {
         String searchResultHeading = hotelsHomePage.getSearchResultHeading();
-        String expectedResultHeading = "Milwaukee, Wisconsin, United States of America\n" +
-                "Thu 15 - Wed 21 March 2018, 6 nights, 1 room, 2 adults, 2 children";
+        String tomorrow = BasePage.getFutureDate(1, "EEE d");
+        String sixDaysLater = BasePage.getFutureDate(7, "EEE d MMMMM YYYY");
+        String expectedResultHeading = "Milwaukee, WI, USA " + tomorrow + " - " + sixDaysLater + ", 6 nights, 1 room, 2 adults, 2 children";
         Assert.assertEquals(searchResultHeading, expectedResultHeading, "Search Result heading is incorrect.");
     }
 }

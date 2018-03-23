@@ -17,7 +17,7 @@ formatter.feature({
   ]
 });
 formatter.before({
-  "duration": 9340970816,
+  "duration": 11094234270,
   "status": "passed"
 });
 formatter.background({
@@ -36,7 +36,7 @@ formatter.match({
   "location": "HotelsSD.iAmOnHotelsHomePage()"
 });
 formatter.result({
-  "duration": 712449096,
+  "duration": 744815602,
   "status": "passed"
 });
 formatter.scenario({
@@ -108,6 +108,11 @@ formatter.step({
   "name": "I click on Search to get hotel results",
   "keyword": "And "
 });
+formatter.step({
+  "line": 20,
+  "name": "I verify search results page displays correct options chosen",
+  "keyword": "Then "
+});
 formatter.match({
   "arguments": [
     {
@@ -122,81 +127,88 @@ formatter.match({
   "location": "HotelsSD.enterDestination(String,String)"
 });
 formatter.result({
-  "duration": 8930566972,
+  "duration": 8886439996,
   "status": "passed"
 });
 formatter.match({
   "location": "HotelsSD.selectCheckInTomorrow()"
 });
 formatter.result({
-  "duration": 10113858548,
+  "duration": 9992426596,
   "status": "passed"
 });
 formatter.match({
   "location": "HotelsSD.selectCheckOutSixDaysLater()"
 });
 formatter.result({
-  "duration": 9809116622,
+  "duration": 10002813725,
   "status": "passed"
 });
 formatter.match({
   "location": "HotelsSD.verifyNumberOfNights()"
 });
 formatter.result({
-  "duration": 40390961,
+  "duration": 38230654,
   "status": "passed"
 });
 formatter.match({
   "location": "HotelsSD.selectRooms()"
 });
 formatter.result({
-  "duration": 329608021,
+  "duration": 278109891,
   "status": "passed"
 });
 formatter.match({
   "location": "HotelsSD.selectNumberOfRooms()"
 });
 formatter.result({
-  "duration": 232355151,
+  "duration": 271647550,
   "status": "passed"
 });
 formatter.match({
   "location": "HotelsSD.selectAdults()"
 });
 formatter.result({
-  "duration": 530812480,
+  "duration": 449699292,
   "status": "passed"
 });
 formatter.match({
   "location": "HotelsSD.selectChildren()"
 });
 formatter.result({
-  "duration": 483282777,
+  "duration": 511055180,
   "status": "passed"
 });
 formatter.match({
   "location": "HotelsSD.selectAgeOfChild1()"
 });
 formatter.result({
-  "duration": 514575528,
+  "duration": 573289579,
   "status": "passed"
 });
 formatter.match({
   "location": "HotelsSD.selectAgeOfChild2()"
 });
 formatter.result({
-  "duration": 494421234,
+  "duration": 439026269,
   "status": "passed"
 });
 formatter.match({
   "location": "HotelsSD.clickSearch()"
 });
 formatter.result({
-  "duration": 1941412330,
+  "duration": 1633291924,
+  "status": "passed"
+});
+formatter.match({
+  "location": "HotelsSD.verifySearchResultHeaderInfo()"
+});
+formatter.result({
+  "duration": 675197663,
   "status": "passed"
 });
 formatter.after({
-  "duration": 361453283,
+  "duration": 393255778,
   "status": "passed"
 });
 });
