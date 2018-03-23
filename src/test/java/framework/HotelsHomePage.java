@@ -22,8 +22,8 @@ public class HotelsHomePage extends BasePage{
     private By destinationTextField = By.id("qf-0q-destination");
     private By destinationguesses = By.className("autosuggest-category-result");
     private By checkInDateTextBox = By.xpath(".//*[@id=\"qf-0q-localised-check-in\"]");
-    private By checkInDatePicker = By.xpath(".//*[@class=\"widget-datepicker-bd\"]/descendant::a/");
-    private By checkOutDatePicker = By.xpath(".//*[@class=\"widget-datepicker-bd\"]/descendant::a/");
+    private By checkInDatePicker = By.xpath(".//*[@class=\"widget-datepicker-bd\"]/descendant::td");
+    private By checkOutDatePicker = By.xpath(".//*[@class=\"widget-datepicker-bd\"]/descendant::td");
     private By checkOutDateTextBox = By.xpath(".//*[@id=\"qf-0q-localised-check-out\"]");
     private By numRoomsDropdown = By.id("qf-0q-rooms");
     private By roomsDropdown = By.id("qf-0q-compact-occupancy");
@@ -75,7 +75,8 @@ public class HotelsHomePage extends BasePage{
 
     public void selectCheckOutDate() throws Exception {
         clickOn(checkOutDateTextBox);
-        String sixDaysLater = BasePage.getFutureDate(6, "d");
+        //6 days from tomorrow is same as 7 days from today, getFutureDate method is based on today
+        String sixDaysLater = BasePage.getFutureDate(7, "d");
         System.out.println("Im in selectCheckOutDate method and sixDaysLater is equal to: " + sixDaysLater);
         selectValueFromCalendar(checkOutDatePicker, sixDaysLater);
         System.out.println("Leaving checkOutDate method");

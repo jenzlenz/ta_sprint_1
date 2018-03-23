@@ -19,9 +19,7 @@ public class BasePage {
 
 	public void clickOn(By locator) {
 		try {
-			System.out.println("Inside clickOn method in BasePage");
 			SharedSD.getDriver().findElement(locator).click();
-			System.out.println("Leaving clickOn method in BasePage");
 		} catch (NoSuchElementException e) {
 			Assert.fail("Element is not found with this locator: " + locator.toString());
 			e.printStackTrace();
@@ -163,9 +161,10 @@ public class BasePage {
 			try {
 				System.out.println("Im inside handleAutoComplete");
 				List<WebElement> list = SharedSD.getDriver().findElements(locator2);
+				Thread.sleep(5000);
 				System.out.println("I just got the list");
 				for (WebElement ele : list) {
-					if(ele.getText().contains("Milwuakee County, United States of America")) {
+					if(ele.getText().contains("Milwaukee, Milwuakee County, United States of America")) {
 						ele.click();
 						System.out.println("should click");
 						Thread.sleep(4000);
@@ -224,7 +223,7 @@ public class BasePage {
 				Thread.sleep(3000);
 				break;
 			}
-			System.out.println("I didn't find the date to seelct YET.....");
+			System.out.println("I didn't find the date to select YET.....");
 		}
 	}
 
@@ -249,11 +248,11 @@ public class BasePage {
 		Date today = new Date();
 		Calendar c = Calendar.getInstance();
 		c.setTime(today);
-		c.add(Calendar.DATE, 1);
-		Date tomorrow = new Date();
-		tomorrow = c.getTime();
-		String futureDate = sdf.format(tomorrow);
-		System.out.println("Tomorrow's date should be: " + futureDate);
+		c.add(Calendar.DATE, daysToAdd);
+		Date otherDate = new Date();
+		otherDate = c.getTime();
+		String futureDate = sdf.format(otherDate);
+		System.out.println("Future date is: " + futureDate);
 
 		return futureDate;
 	}

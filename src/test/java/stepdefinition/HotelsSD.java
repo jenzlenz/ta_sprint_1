@@ -22,7 +22,7 @@ public class HotelsSD {
 
     @When("^I enter (.+) in destination and select (.+) on hotels.com home screen$")
     public void enterDestination(String destination, String specificPlace) throws InterruptedException {
-        hotelsHomePage.chooseDestination("Milwaukee", "Milwaukee, Milwuakee County, United States of America");
+        hotelsHomePage.chooseDestination("Milwaukee, Milwuakee County, United States of America", "Milwaukee, Milwuakee County, United States of America");
     }
 
     @When("^I select check in for tomorrows date$")
