@@ -4,7 +4,8 @@ Feature: Verification of Hotels homepage data
   Background:
     Given I am on hotels home page
 
-#  # JIRA ticket TA4:
+# JIRA ticket TA4:
+  @hotels1
   Scenario: Verify user is able to successfully search for hotels
     When I enter Milwaukee in destination and select Milwaukee, Milwuakee County, United States of America on hotels.com home screen
     When I select check in for tomorrows date

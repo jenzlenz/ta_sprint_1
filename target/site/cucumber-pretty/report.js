@@ -1,9 +1,9 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("hotels.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("darksky.feature");
 formatter.feature({
   "line": 2,
-  "name": "Verification of Hotels homepage data",
+  "name": "Darksky homepage data",
   "description": "",
-  "id": "verification-of-hotels-homepage-data",
+  "id": "darksky-homepage-data",
   "keyword": "Feature",
   "tags": [
     {
@@ -12,12 +12,12 @@ formatter.feature({
     },
     {
       "line": 1,
-      "name": "@hotels"
+      "name": "@darksky"
     }
   ]
 });
 formatter.before({
-  "duration": 11094234270,
+  "duration": 14393617359,
   "status": "passed"
 });
 formatter.background({
@@ -29,186 +29,86 @@ formatter.background({
 });
 formatter.step({
   "line": 5,
-  "name": "I am on hotels home page",
+  "name": "I am on darksky home page",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "HotelsSD.iAmOnHotelsHomePage()"
+  "location": "DarkSkySD.iAmOnDarkSkyHomePage()"
 });
 formatter.result({
-  "duration": 744815602,
+  "duration": 927248243,
   "status": "passed"
 });
 formatter.scenario({
   "comments": [
     {
-      "line": 7,
-      "value": "#  # JIRA ticket TA4:"
+      "line": 18,
+      "value": "#  #JIRA Ticket TA3"
     }
   ],
-  "line": 8,
-  "name": "Verify user is able to successfully search for hotels",
-  "description": "",
-  "id": "verification-of-hotels-homepage-data;verify-user-is-able-to-successfully-search-for-hotels",
-  "type": "scenario",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "line": 9,
-  "name": "I enter Milwaukee in destination and select Milwaukee, Milwuakee County, United States of America on hotels.com home screen",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 10,
-  "name": "I select check in for tomorrows date",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 11,
-  "name": "I select check out date 6 days later",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I verify the number of nights is 6",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 13,
-  "name": "I select Rooms",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
-  "name": "I select 1 room",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 15,
-  "name": "I select 2 adults",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "I select 2 children",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 17,
-  "name": "I select age 2 for child 1",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "I select age 1 for child 2",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "I click on Search to get hotel results",
-  "keyword": "And "
-});
-formatter.step({
   "line": 20,
-  "name": "I verify search results page displays correct options chosen",
+  "name": "Select Tomorrows date from Time Machine",
+  "description": "",
+  "id": "darksky-homepage-data;select-tomorrows-date-from-time-machine",
+  "type": "scenario",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "line": 19,
+      "name": "@darksky3"
+    }
+  ]
+});
+formatter.step({
+  "line": 21,
+  "name": "I click on TimeMachine on darksky homepage",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 22,
+  "name": "I select tomorrows date",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 23,
+  "name": "I verify selected date is NOT clickable",
   "keyword": "Then "
 });
+formatter.step({
+  "line": 24,
+  "name": "I verify date is displayed in correct format",
+  "keyword": "And "
+});
 formatter.match({
-  "arguments": [
-    {
-      "val": "Milwaukee",
-      "offset": 8
-    },
-    {
-      "val": "Milwaukee, Milwuakee County, United States of America",
-      "offset": 44
-    }
-  ],
-  "location": "HotelsSD.enterDestination(String,String)"
+  "location": "DarkSkySD.clickTimeMachineButton()"
 });
 formatter.result({
-  "duration": 8886439996,
+  "duration": 503936772,
   "status": "passed"
 });
 formatter.match({
-  "location": "HotelsSD.selectCheckInTomorrow()"
+  "location": "DarkSkySD.selectTomorrowsDate()"
 });
 formatter.result({
-  "duration": 9992426596,
+  "duration": 15385634815,
   "status": "passed"
 });
 formatter.match({
-  "location": "HotelsSD.selectCheckOutSixDaysLater()"
+  "location": "DarkSkySD.verifySelectedDateNotClickable()"
 });
 formatter.result({
-  "duration": 10002813725,
+  "duration": 35972127,
   "status": "passed"
 });
 formatter.match({
-  "location": "HotelsSD.verifyNumberOfNights()"
+  "location": "DarkSkySD.verifyDateIsInCorrectFormat()"
 });
 formatter.result({
-  "duration": 38230654,
-  "status": "passed"
-});
-formatter.match({
-  "location": "HotelsSD.selectRooms()"
-});
-formatter.result({
-  "duration": 278109891,
-  "status": "passed"
-});
-formatter.match({
-  "location": "HotelsSD.selectNumberOfRooms()"
-});
-formatter.result({
-  "duration": 271647550,
-  "status": "passed"
-});
-formatter.match({
-  "location": "HotelsSD.selectAdults()"
-});
-formatter.result({
-  "duration": 449699292,
-  "status": "passed"
-});
-formatter.match({
-  "location": "HotelsSD.selectChildren()"
-});
-formatter.result({
-  "duration": 511055180,
-  "status": "passed"
-});
-formatter.match({
-  "location": "HotelsSD.selectAgeOfChild1()"
-});
-formatter.result({
-  "duration": 573289579,
-  "status": "passed"
-});
-formatter.match({
-  "location": "HotelsSD.selectAgeOfChild2()"
-});
-formatter.result({
-  "duration": 439026269,
-  "status": "passed"
-});
-formatter.match({
-  "location": "HotelsSD.clickSearch()"
-});
-formatter.result({
-  "duration": 1633291924,
-  "status": "passed"
-});
-formatter.match({
-  "location": "HotelsSD.verifySearchResultHeaderInfo()"
-});
-formatter.result({
-  "duration": 675197663,
+  "duration": 35571884,
   "status": "passed"
 });
 formatter.after({
-  "duration": 393255778,
+  "duration": 25650269,
   "status": "passed"
 });
 });

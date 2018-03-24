@@ -13,14 +13,14 @@ public class DarkSkyHomePage extends BasePage {
 
 	//Locators
 	private By todaysBar = By.className("bar");
-	private By timeMachineButton = By.id("timeMachine");
 	private By dayOfWeek = By.className("name");
 	private By day = By.className("day");
 	private By dayRevealed = By.linkText("day revealed");
 	private By minTemp = By.className("minTemp");
 	private By maxTemp = By.className("maxTemp");
-	private By timeMachineCalendar = By.className("calendar");
-	private By selectedDateInHeader = By.className("date");
+	private By timeMachineButton = By.xpath(".//*[@id=\"timeMachine\"]/div[2]/a");
+	private By timeMachineCalendar = By.xpath(".//*[@class=\"pika-lendar\"]/descendant::td");
+	private By selectedDateInHeader = By.xpath("//*[@id=\"main\"]/div[1]/div[1]/div");
 
 	//Methods
 	public void clickOnTodaysBar() {
@@ -98,29 +98,61 @@ public class DarkSkyHomePage extends BasePage {
 
 	public void selectTimeMachineDate() throws Exception {
 		String tomorrow = BasePage.getFutureDate(1, "d");
-		System.out.println("In selectTimeMachineDate method and tomorrow is equal to: " +tomorrow);
+		Thread.sleep(3000);
 		selectValueFromCalendar(timeMachineCalendar, tomorrow);
+		Thread.sleep(3000);
 	}
 
 	public boolean isDateClickable() {
-		boolean displayed = BasePage.isLocatorDisplayed(timeMachineCalendar);
-		boolean enabled = BasePage.isLocatorEnabled(timeMachineCalendar);
-		// assumption: date is clickable if it is displayed and enabled
-		if (displayed && enabled) {return true;}
-		else return false;
+		//is clickable means it has an href attribute
+		String selectedDateLink = SharedSD.getDriver().findElement(selectedDateInHeader).getAttribute("href");
+		try {
+			if (selectedDateLink.equals(null)) {
+				return false;
+			} else {
+				return true;
+			}
+		} catch (NullPointerException e) {
+			return false;
+		}
 	}
 
 	public boolean isHeaderDateFormattedCorrectly() {
 		//date needs to be in this format: Thursday, Mar 15th, 2018
-		//calculate what tomorrow's date should look like
+		//first find the day and identify the suffix st/nd/rd/th
 
-		String tomorrow = BasePage.getFutureDate(1,"EEE, MMM d, yyyy");
+		String tomorrowDayAsString = BasePage.getFutureDate(1,"d");
+		int tomorrowDayAsInt = Integer.parseInt(tomorrowDayAsString);
+		String dayNumberSuffix = getDayNumberSuffix(tomorrowDayAsInt);
+
+		String tomorrowPart1 = BasePage.getFutureDate(1, "EEEEE, MMM d");
+		String tomorrowPart2 = BasePage.getFutureDate(1, "YYYY");
+
+		String tomorrowShouldBe = tomorrowPart1 + dayNumberSuffix + ", " + tomorrowPart2;
+
+		String websiteShowsTomorrowAs = SharedSD.getDriver().findElement(selectedDateInHeader).getText();
 
 		//compare what we know it should like to what it actually looks like
-		if (tomorrow.equals(selectedDateInHeader)) {
+		if (tomorrowShouldBe.equals(websiteShowsTomorrowAs)) {
 			return true;
-		} else
+		} else {
 			return false;
+		}
+	}
 
+	private String getDayNumberSuffix(int day) {
+		if (day >= 11 && day <= 13) {
+			return "th";
+		}
+		switch (day % 10) {
+			case 1:
+				return "st";
+			case 2:
+				return "nd";
+			case 3:
+				return "rd";
+			default:
+				return "th";
+		}
 	}
 }

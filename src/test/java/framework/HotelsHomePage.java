@@ -41,7 +41,7 @@ public class HotelsHomePage extends BasePage{
 //Methods
     public void clickOnSearchButton() {
     clickOn(searchButton);
-}
+    }
 
     public void clickOnEditOrAddRooms() {
         clickOn(editOrAddRooms);

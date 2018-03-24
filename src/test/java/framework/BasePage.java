@@ -118,56 +118,17 @@ public class BasePage {
 		return false;
 	}
 
-//	public void handleAutoComplete(By locator, String inputValue, By locator2, By optionToSelect) throws InterruptedException {
-//		sendText(locator, inputValue);
-//
-//		List<WebElement> list = SharedSD.getDriver().findElements(locator2);
-//		for (WebElement ele : list) {
-//			System.out.println(" ");
-//			System.out.println("ele.getText() equals: " + ele.getText());
-//			System.out.println("optionToSelect is: " + optionToSelect);
-//			if(ele.getText().equals(optionToSelect)) {
-//				System.out.println("i should be clicking on it");
-//				Thread.sleep(4000);
-//				ele.click();
-//				break;
-//			}
-//		}
-//	}
-
-//	public void selectAutoCompleteByText(By locator, String stringOne) {
-//		try {
-//			List<WebElement> list = SharedSD.getDriver().findElements(locator);
-//
-//			for (WebElement elements : list) {
-//
-//				if (elements.getText().equals(stringOne)) {
-//					Thread.sleep(4000);
-//					elements.click();
-//					break;
-//				}
-//			}
-//		} catch (NoSuchElementException e) {
-//			Assert.fail("Element is not found with this locator: " + locator.toString());
-//			e.printStackTrace();
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		} catch (StaleElementReferenceException e) {
-//			e.printStackTrace();
-//		}
-//	}
-
 	public void handleAutoComplete(By locator2, String optionToSelect) throws InterruptedException {
 			try {
 				System.out.println("Im inside handleAutoComplete");
 				List<WebElement> list = SharedSD.getDriver().findElements(locator2);
-				Thread.sleep(5000);
+				Thread.sleep(2000);
 				System.out.println("I just got the list");
 				for (WebElement ele : list) {
 					if(ele.getText().contains("Milwaukee, Milwuakee County, United States of America")) {
 						ele.click();
 						System.out.println("should click");
-						Thread.sleep(4000);
+						Thread.sleep(3000);
 
 						break;
 					} else {
@@ -203,27 +164,20 @@ public class BasePage {
 	}
 
 	public void selectValueFromCalendar(By locator, String dateToSelect) throws Exception {
-		Thread.sleep(3000);
-		System.out.println("Inside selectValueFromCalendar method");
+		Thread.sleep(2000);
 		SharedSD.getDriver().findElement(locator);
 		List<WebElement> days = SharedSD.getDriver().findElements(locator);
-		System.out.println("Just got the list of dates on the calendar");
 		Thread.sleep(3000);
 
 		for (WebElement day : days) {
-			System.out.println("Looping through dates until one equals tomorrows date");
 
 			String calendarDay = day.getText();
-			System.out.println("calendar day is: " + calendarDay);
-			System.out.println("dateToSelect is: " + dateToSelect);
+
 			if (calendarDay.equals(dateToSelect)) {
-				System.out.println("I found the date I need to select");
 				day.click();
-				System.out.println("I just clicked on the date");
 				Thread.sleep(3000);
 				break;
 			}
-			System.out.println("I didn't find the date to select YET.....");
 		}
 	}
 
@@ -252,7 +206,6 @@ public class BasePage {
 		Date otherDate = new Date();
 		otherDate = c.getTime();
 		String futureDate = sdf.format(otherDate);
-		System.out.println("Future date is: " + futureDate);
 
 		return futureDate;
 	}

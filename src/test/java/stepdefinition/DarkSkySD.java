@@ -17,17 +17,9 @@ public class DarkSkySD {
         Assert.assertEquals(SharedSD.getDriver().getTitle(), "Dark Sky - 260 Broadway, New York City, NY", "Invalid Home Page");
     }
 
-    @When("^I click on (.+) on darksky homepage")
-    public void clickOnSomething(String something) {
-
-        switch (something) {
-            case "todays bar":
-                darkSkyHomePage.clickOnTodaysBar();
-                break;
-            case "TimeMachine":
-                darkSkyHomePage.clickOnTimeMachineButton();
-                break;
-        }
+    @When("^I click on TimeMachine on darksky homepage")
+    public void clickTimeMachineButton() {
+        darkSkyHomePage.clickOnTimeMachineButton();
     }
 
     @When ("^I select tomorrows date$")
