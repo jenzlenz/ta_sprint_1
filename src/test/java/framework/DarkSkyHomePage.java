@@ -1,5 +1,6 @@
 package framework;
 
+import org.apache.velocity.runtime.directive.Parse;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -31,14 +32,22 @@ public class DarkSkyHomePage extends BasePage {
 		clickOn(timeMachineButton);
 	}
 
-	public By getMinTemp(){
-		System.out.println("Min Temp = " + minTemp);
-		return minTemp;
+	public boolean isTempLowToHigh(){
+		List<WebElement> minTemps = SharedSD.getDriver().findElements(minTemp);
+		List<WebElement> maxTemps = SharedSD.getDriver().findElements(maxTemp);
+		for (int i = 0; i < minTemps.size(); i++) {
+			//get the webelement text and convert to int, then remove degree symbol to be able to compare
+			//code written to accomodate single and double digit temps
+			int lowTempInt = Integer.parseInt(minTemps.get(i).getText().substring(0, (minTemps.get(i).getText().length() - 1)));
+			int highTempInt = Integer.parseInt(maxTemps.get(i).getText().substring(0,(maxTemps.get(i).getText().length() - 1)));
+
+			if (lowTempInt > highTempInt) {
+				return false;
+			}
+		}
+		return true;
 	}
-	public By getMaxTemp(){
-		System.out.println("Max Temp = " + maxTemp);
-		return maxTemp;
-	}
+
 
 	public List getDaysOfWeek() {
 		//now create a list of all the days on darksky

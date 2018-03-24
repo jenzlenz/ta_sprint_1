@@ -22,6 +22,11 @@ public class DarkSkySD {
         darkSkyHomePage.clickOnTimeMachineButton();
     }
 
+    @When("^I click on todays bar on darksky homepage")
+    public void clickTodaysBar() {
+        darkSkyHomePage.clickOnTodaysBar();
+    }
+
     @When ("^I select tomorrows date$")
     public void selectTomorrowsDate() throws Exception {
         darkSkyHomePage.selectTimeMachineDate();
@@ -64,11 +69,7 @@ public class DarkSkySD {
 
     @Then("^I verify low and high temp displayed correctly on parent bar$")
     public void verifyCorrectTempOnParentBar() {
-        //not sure how to get integer temp from the  locator
-        //String lowTemp = darkSkyHomePage.getMinTemp();
-        //String highTemp  = darkSkyHomePage.getMaxTemp();
-        //boolean lowLessThanHigh = (lowTemp < highTemp);
-        boolean lowLessThanHigh = true;
+        boolean lowLessThanHigh = darkSkyHomePage.isTempLowToHigh();
         Assert.assertTrue(lowLessThanHigh, "Temps not displayed from low to high.");
     }
 }
